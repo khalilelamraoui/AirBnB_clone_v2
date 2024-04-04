@@ -10,6 +10,7 @@ from os.path import exists
 
 env.hosts = ['34.229.254.181', '100.25.223.158']
 
+
 def do_deploy(archive_path):
     """ distributes an archive to my web servers
     """
@@ -30,5 +31,6 @@ def do_deploy(archive_path):
         run("ln -s {}/ /data/web_static/current".format(no_tgz))
 
         return True
-    except:
+    except Exception as e:
+        print("Exception occurred:", e)
         return False
