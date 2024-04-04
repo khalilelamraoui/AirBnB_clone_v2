@@ -3,7 +3,7 @@
     ..an archive to your web servers, using the function do_deploy: """
 
 
-from fabric.api import *
+from fabric.api import env, put, run
 from datetime import datetime
 from os.path import exists
 
