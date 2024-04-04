@@ -8,8 +8,7 @@ from datetime import datetime
 from os.path import exists
 
 
-env.hosts = ['52.203.91.47', '100.26.152.120']
-
+env.hosts = ['34.229.254.181', '100.25.223.158']
 
 
 def do_pack():
@@ -44,7 +43,8 @@ def do_deploy(archive_path):
         run("rm -rf /data/web_static/current")
         run("ln -s {}/ /data/web_static/current".format(no_tgz))
         return True
-    except:
+    except Exception as e:
+        print("Exception occurred:", e)
         return False
 
 
