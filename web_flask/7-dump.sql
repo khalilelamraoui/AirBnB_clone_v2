@@ -93,3 +93,39 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2017-03-25 19:42:51
+
+DROP TABLE IF EXISTS 'places';
+
+CREATE TABLE 'places' (
+  'id' varchar(60) NOT NULL,
+  'created_at' datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  'updated_at' datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  'name' varchar(128) NOT NULL,
+  'description' text,
+  'number_rooms' int(11) NOT NULL DEFAULT '0',
+  'number_bathrooms' int(11) NOT NULL DEFAULT '0',
+  'max_guest' int(11) NOT NULL DEFAULT '0',
+  'price_by_night' int(11) NOT NULL DEFAULT '0',
+  'latitude' float NOT NULL DEFAULT '0',
+  'longitude' float NOT NULL DEFAULT '0',
+  'city_id' varchar(60) NOT NULL,
+  'user_id' varchar(60) NOT NULL,
+  PRIMARY KEY ('id'),
+  KEY 'city_id' ('city_id'),
+  KEY 'user_id' ('user_id'),
+  CONSTRAINT 'places_ibfk_1' FOREIGN KEY ('city_id') REFERENCES 'cities' ('id'),
+  CONSTRAINT 'places_ibfk_2' FOREIGN KEY ('user_id') REFERENCES 'users' ('id')
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS 'users';
+
+CREATE TABLE 'users' (
+  'id' varchar(60) NOT NULL,
+  'created_at' datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  'updated_at' datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  'email' varchar(128) NOT NULL,
+  'password' varchar(128) NOT NULL,
+  'first_name' varchar(128) NOT NULL,
+  'last_name' varchar(128) NOT NULL,
+  PRIMARY KEY ('id')
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

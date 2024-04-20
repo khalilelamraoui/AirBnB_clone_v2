@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" sqlalchemy storage engine """
+""" new class for sqlAlchemy """
 from models.state import State
 from models.city import City
 from models.user import User
