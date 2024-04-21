@@ -530,3 +530,4 @@ CREATE TABLE `reviews` (
 LOCK TABLES `reviews` WRITE;
 UNLOCK TABLES;
 
+CONSTRAINT `place_amenity_ibfk_1` FOREIGN KEY (`place_id`) REFERENCES `places` (`id`)
