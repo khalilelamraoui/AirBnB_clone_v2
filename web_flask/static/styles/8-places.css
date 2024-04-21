@@ -32,14 +32,18 @@ article {
 	height: 80px;	
 	width: 100%;
 }
-
+.title_box{
+	display: flex;
+    align-items: flex-start;
+	
+}
 .price_by_night {
 	display: flex;
 	justify-content: center;
 	align-self: flex-end;
 
-	position: absolute;
-	right: 0;
+	/*position: absolute;*/
+	/*right: 0;*/
 
 	line-height: 60px;
 	color: #FF5A5F;
@@ -50,6 +54,7 @@ article {
 	float: right;
 	min-width: 60px;
 	height: 60px;
+	align-self: flex-start;
 }
 
 .information {
@@ -94,8 +99,10 @@ h1 {
 
 article h2 {
 	font-size: 30px;
-	margin: 10px auto;
-	padding: 0px;
+    margin: 10px auto;
+    padding: 0px 10px;
+    height: 80px;
+	text-align: left;
 }
 
 .guest_icon {
